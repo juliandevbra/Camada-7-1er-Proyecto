@@ -1,15 +1,13 @@
 import './App.css'
-import Card from './components/Card'
-import Home from './components/Home'
-
+import ClassComponent from './components/ClassComponent'
+import FuncComponent from './components/FuncComponent'
 
 export default function App() {
   
-
-
   return (
     <>
-      <Home/>
+      <ClassComponent/>
+      <FuncComponent/>
     </>
   )
 }
