@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import FormCard from './FormCard'
 
 const Form = () => {
     const [persona, setPersona] = useState({
@@ -16,7 +17,7 @@ const Form = () => {
 
   return (
     <>
-        <form onSubmit={handleSubmit}>
+        <form className='formulario' onSubmit={handleSubmit}>
             <label>Nombre:</label>
             <input type="text" onChange={(e) => setPersona({...persona, name: e.target.value})}/>
             {/* si hay un error mostrar 'Coloque un nombre indicado'
@@ -26,22 +27,9 @@ const Form = () => {
             <button>Enviar</button>
         </form>
 
+        {show ? <FormCard persona={persona}/>:null}
         {
-            show 
-            ?
-            <>
-                <h3>Tu nombre es: {persona.name}</h3>
-                <h4>Cumplis años en: {persona.bday}</h4>
-            </>
-            :
-            null
-        }
-        {
-            show && 
-            <>
-                <h3>Tu nombre es: {persona.name}</h3>
-                <h4>Cumplis años en: {persona.bday}</h4>
-            </>
+            show && <FormCard persona={persona}/>
         }
         
 
